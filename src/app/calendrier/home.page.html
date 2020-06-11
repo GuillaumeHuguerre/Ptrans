@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Calendrier
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons (click)="goToToday()"  slot="end">
+      <ion-button>Aujourd'hui</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Card for adding a new event -->
+<ion-card class="bandeau_header">
+  <ion-card-header class="header_add_event" tappable (click)="collapseCard = !collapseCard">
+    <ion-card-title class="title_add_event"><ion-icon name="add"></ion-icon></ion-card-title>
+    
+  </ion-card-header>
+  <ion-card-content *ngIf="collapseCard">
+    <ion-select class="todo_list_import" placeholder="Cliquer pour importer depuis la Todo List" (ionChange)="selectedItem($event)">
+      <ion-list>
+       <ion-select-option *ngFor="let _item of items" [value]="_item.title + _item.id" >{{_item.title}}.</ion-select-option>
+      </ion-list>
+     
+    </ion-select>
+    <ion-item>
+      <ion-input type="text" placeholder="Titre" [(ngModel)]="event.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="event.desc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Début</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fin</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Toute la journée</ion-label>
+      <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+    </ion-item>
+    <ion-button color="tertiary" fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''">Add Event</ion-button>
+
+  </ion-card-content>
+</ion-card>
+
+<ion-row>
+  <!-- Change the displayed calendar mode -->
+  <ion-col size="4">
+    <ion-button class="mode_change" expand="block" [color]="calendar.mode == 'month' ? 'tertiary' : 'tertiary'" (click)="changeMode('month')">Mois</ion-button>
+  </ion-col>
+  <ion-col size="4">
+    <ion-button class="mode_change" expand="block" [color]="calendar.mode == 'week' ? 'tertiary' : 'tertiary'" (click)="changeMode('week')">Semaine</ion-button>
+  </ion-col>
+  <ion-col size="4">
+    <ion-button class="mode_change" expand="block" [color]="calendar.mode == 'day' ? 'tertiary' : 'tertiary'" (click)="changeMode('day')">Jour</ion-button>
+  </ion-col>
+
+  <!-- Move back one screen of the slides -->
+  <ion-col size="2" text-left>
+    <ion-button fill="clear" (click)="back()" class="back_arrow">
+      <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+
+  <ion-col class="all_date_display" size="8" text-center>
+  <ion-label id="lisibleDate">{{calendar.lisibleDate}}</ion-label>
+  </ion-col>
+
+  <!-- Move forward one screen of the slides -->
+  <ion-col size="2" text-right>
+    <ion-button fill="clear" (click)="next()" class="next_arrow">
+      <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+</ion-row>
+
+<ion-content padding>
+  <calendar 
+  
+    [eventSource]="eventSource" 
+    [calendarMode]="calendar.mode" 
+    [currentDate]="calendar.currentDate"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)" 
+    startHour="1"
+    endHour="25"
+    step="30"
+    startingDayWeek="1">
+  </calendar>
+</ion-content>

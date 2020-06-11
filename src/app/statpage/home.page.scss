@@ -1,0 +1,52 @@
+$color_trait : #C5C6CA;
+$color_txt : #C5C6CA;
+$color_bar : #2E7BF6;
+$color_dashed_moy : #64C468;
+$color_background : #F1F2F6;
+$color_fond : #FFFFFF;
+$color_subtitle : #616266;
+
+
+.Stat_page{
+    justify-content: unset;
+}
+
+.header_stat_page{
+    padding-bottom: 35px;
+}
+
+.fleche_back{
+    width: 25px;
+    height: 25px;
+    border-left: 5px solid $color_bar;
+    border-bottom: 5px solid $color_bar;    
+    transform: rotate(45deg);
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.titre_stat_page{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 13px;
+    font-size: 23px;
+}
+
+.separator_section{
+    border-top: 1px solid $color_trait;
+}
+
+.under_header{
+    background-color: $color_background;
+    height: 50px;
+    padding-top: 20px;
+    padding-left: 16px;
+    color: $color_subtitle;
+}
+
+.nb_hour{
+    padding-top: 30px;
+    font-size: 30px;
+    padding-left: 19px;
+}

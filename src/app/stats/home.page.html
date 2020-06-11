@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>STATISTIQUES</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+ 
+    <ion-row>
+      <ion-col text-center class="column">
+        <ion-button (click)="goToSport()" class="compteur vert">8H</ion-button>
+        <div>Sport</div>
+      </ion-col>
+
+      <ion-col text-center class="column">
+        <ion-button (click)="goToTravail()" class="compteur vert">9H</ion-button>
+        <ion-text style="display: block;">Travail </ion-text>
+      </ion-col>
+    </ion-row>
+    
+    
+    <ion-row class="second_line">
+      <ion-col text-center class="column">
+        <ion-button (click)="goToLoisir()" class="compteur vert">8H</ion-button>
+        <div>Loisir</div>
+      </ion-col>
+
+      <ion-col text-center class="column">
+        <ion-button (click)="goToInactivite()" class="compteur rouge">15H</ion-button>
+        <ion-text>Inactivité</ion-text>
+      </ion-col>
+    </ion-row>
+    
+
+    <canvas id="barchart"></canvas>
+
+</ion-content>

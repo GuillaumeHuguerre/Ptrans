@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Todo-List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/new-item']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    
+    <ion-item *ngFor="let item of items" [routerLink]="['/update-item', item.id]">
+      <ion-label>
+        {{ item.title }}
+      </ion-label>
+      <ion-badge *ngIf="isAfaire(item)" color="danger" slot="end">À faire</ion-badge>
+      <ion-badge *ngIf="isCommence(item)" color="warning" slot="end">Commencé</ion-badge>
+      <ion-badge *ngIf="isTermine(item)" color="success" slot="end">Terminé</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

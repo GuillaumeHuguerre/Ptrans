@@ -1,0 +1,73 @@
+
+h4
+{
+    padding-bottom: 6%;
+    padding-top: 3%;
+    padding-left: 4%;
+    font-size: 30px;
+    border: none;
+}
+
+h3{
+    padding-bottom: 6%;
+    padding-top: 3%;
+    padding-left: 4%;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#icon-menu
+{
+    font-size : 45px;
+}
+
+
+.item-menu
+{
+    background-color:#9980eb ;
+    margin-top: 2%;
+    text-align: center;
+    border-radius: 3px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.item-menu:hover{
+    cursor: pointer;
+}
+
+ion-content{
+    --background: #7e57ff;
+}
+
+ion-button{
+    --background: #9980eb;
+    
+}
+
+#icon-calendar, #icon-todo
+{
+    font-size : 50px;
+    color : white;
+}
+
+
+.select_list
+{
+    background-color:#9980eb ;
+    color : #fff;
+}
+
+.hide
+{
+    display: none;
+}
+
+
+#img_logo
+{
+    height: 200px;
+    bottom: 0px;
+}
+
+

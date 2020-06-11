@@ -1,0 +1,88 @@
+<ion-header>
+
+</ion-header>
+
+
+
+<ion-content fullscreen>
+  <ion-text color="light">
+    <h4>MENU</h4>
+  </ion-text>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div (click)="goToCalendar()" class="item-menu">
+        
+          <ion-icon id="icon-calendar" name="calendar"></ion-icon>
+          <ion-text color="light"><h3>Calendrier</h3></ion-text>
+        
+      </div>
+      </ion-col>
+
+      <ion-col>
+        <div (click)="goToTodo()" class="item-menu">
+          <ion-icon id="icon-todo" name="checkbox-outline"></ion-icon>
+          <ion-text color="light"><h3>Todo-List</h3></ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div (click)="goToStats()" class="item-menu">
+        
+          <ion-icon id="icon-calendar" name="timer"></ion-icon>
+          <ion-text color="light"><h3>Statistiques</h3></ion-text>
+        
+      </div>
+      </ion-col>
+
+      <ion-col>
+        <div class="item-menu">
+          <ion-icon id="icon-todo" name="contacts"></ion-icon>
+          <ion-text color="light"><h3>Amis</h3></ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="select_list" id="list_university" >
+    <ion-select interface="popover" class="select_list" placeholder="Université" (ionChange)="selectedUniversity($event)">
+      <ion-list>
+        <ion-select-option *ngFor="let _school of school | keyvalue"  [value]="_school.key">{{_school.value}}.</ion-select-option>
+       </ion-list>
+
+    </ion-select>
+  </div>
+
+  <div class="select_list hide" id="list_department" (ionChange)="selectedDepartment($event)">
+    <ion-select interface="popover" class="select_list" placeholder="Département">
+      <ion-list>
+        <ion-select-option *ngFor="let _department of departments | keyvalue"  [value]="_department.key">{{_department.value}}.</ion-select-option>
+       </ion-list>
+
+    </ion-select>
+  </div>
+
+  <div class="select_list hide" id="list_group" >
+    <ion-select interface="popover" class="select_list" placeholder="Groupe" (ionChange)="selectedGroup($event)">
+      <ion-list>
+        <ion-select-option *ngFor="let _group of groups | keyvalue"  [value]="_group.key">{{_group.value}}.</ion-select-option>
+       </ion-list>
+
+    </ion-select>
+  </div>
+
+ 
+  
+
+  
+
+  
+</ion-content>
+
+<script src='https://www.google.com/recaptcha/api.js?render=6LcvUpMUAAAAAM0zzGYCBh79vsZNPd6RWhiiLcVY' defer ></script>

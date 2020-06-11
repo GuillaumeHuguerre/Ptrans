@@ -1,0 +1,168 @@
+.compteur
+{
+    width: 130px !important;
+    height: 130px !important;
+    font-size : 40px !important;
+    --border-radius : 50%;
+
+}
+
+
+
+.colum
+{
+    text-align: center;
+}
+.vert
+{
+    --background: #39c71c;
+}
+
+.rouge
+{
+    --background: #ce1919;
+}
+
+/*COLOR*/
+/*
+Couleur des trait = #424344
+Couleur du texte = #424344
+Couleur des bar = #3685F7
+Couleur des dashed moy. = vert
+Couleur du background = #F1F2F6 
+Couleur de fond = Blanc
+
+*/
+.phone{
+    background-color: white; /*313338*/
+    border: 2px solid black; 
+    height: 812px;
+    width: 375px;
+    position: absolute;
+    left: 50%;  
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+body{
+    margin: 0 !important;
+}
+
+.first_cell, .center_cell{
+    border-right: unset !important;
+}
+
+.cell{
+    position: relative;
+    border-top: 1px solid #424344;
+    border-left: 1px dashed #424344;
+    border-right: 1px dashed #424344;
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+    display: inline-block;
+    height: 20px;
+    width: 40px;
+    position: relative
+}
+
+.cell_row{
+    display: flex;
+}
+
+.end_cell{
+    border-bottom: 0px solid black;
+}
+
+.Tab_stat{
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 200px;
+    width: 375px;
+}
+.table{
+    display: inline-block;
+}
+
+.display_value{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: 94px;
+    width: 70px;
+}
+
+.display_0{
+    position: absolute;
+    bottom: 0;
+}
+
+.display_med{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.display_max{
+    position: absolute;
+    top: 0;
+}
+
+.display_value_content{
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    color: #424344;
+    font-size: 12px;
+}
+
+.default_histo_bar{
+    background-color: #3685F7;
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    width: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.end_cell p{
+    font-size: 15px;
+    color: #424344;
+    margin: 0;
+    padding: 4px 0 0 4px;
+}
+.display_moy_dashed{
+    border-bottom: 1px dashed green;
+    width: 300px;
+    position: absolute;
+    
+}
+.display_moy_content{
+    position: absolute;
+    transform: translateY(-55%);
+    left: 303px;
+}
+.display_moy_txt{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+.section_moyenne{
+    height: 10px; 
+    width: 400px;
+}
+.section_moyenne_content p{
+    padding: 0;
+    margin: 0;
+}
+.section_moyenne_separator{
+    border-top: 1px solid #424344;
+}
+
+.second_line{
+    padding-top: 30px;
+}
